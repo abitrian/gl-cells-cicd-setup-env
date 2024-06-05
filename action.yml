@@ -1,0 +1,30 @@
+name: 'Cells Set up environment'
+description: 'Set up build environment for Cells'
+inputs:
+  configure-npm:
+    description: 'Flag to configure npm'
+    required: false
+    default: 'true'
+  configure-gradle:
+    description: 'Flag to configure gradle'
+    required: false
+    default: 'true'
+  configure-bower:
+    description: 'Flag to configure bower'
+    required: false
+    default: 'true'
+  repository-npm:
+    description: 'Repository to use for npm'
+    required: false
+    default: 'gl-bbva-npm-virtual'
+  artifactory-user:
+    description: 'Artifactory User'
+    required: false
+    default: ${{ secrets.ARTUSERNAME }}
+  artifactory-password:
+    description: 'Artifactory User'
+    required: false
+    default: ${{ secrets.ARTPASSWORD }}
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
