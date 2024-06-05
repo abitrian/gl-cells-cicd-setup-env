@@ -5,18 +5,18 @@ on:
 jobs:
   container-test-job:
     runs-on: ubuntu-latest
-    container:
-      image: artifactory.globaldevtools.bbva.com:443/gl-cells-docker-local/cells/arch/cells_devops/cicd-cells-k8s:cells-4.3.0
-      credentials:
-        username: andres.bitrian.tech
-        password: ${{ secrets.ARTIFACTORY_TOKEN }}
-      options: --cpus 1 --memory 4g --user root
+    #container:
+    #  image: artifactory.globaldevtools.bbva.com:443/gl-cells-docker-local/cells/arch/cells_devops/cicd-cells-k8s:cells-4.3.0
+    #  credentials:
+    #    username: andres.bitrian.tech
+    #    password: ${{ secrets.ARTIFACTORY_TOKEN }}
+    #  options: --cpus 1 --memory 4g --user root
     steps:
       - name: Checkout
         env:
-          PAT: ${{ secrets.PAT }}
+          PAT: ${{ secrets.github_token }}
         run: |
           pwd
-          git clone https://$PAT@github.com/abitrian/test-component-lit.git
+          git clone https://$github_token@github.com/abitrian/test-component-lit.git
       - name: Set up enviroment
         uses: ./ # Uses an action in the root directory
