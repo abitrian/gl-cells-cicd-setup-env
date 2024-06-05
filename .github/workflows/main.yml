@@ -9,7 +9,7 @@ jobs:
       image: artifactory.globaldevtools.bbva.com:443/gl-cells-docker-local/cells/arch/cells_devops/cicd-cells-k8s:cells-4.3.0
       credentials:
         username: andres.bitrian.tech
-        #password: ${{ secrets.ARTIFACTORY_TOKEN }}
+        password: ${{ secrets.ARTIFACTORY_TOKEN }}
       options: --cpus 1 --memory 4g --user root
     steps:
       - name: Checkout
