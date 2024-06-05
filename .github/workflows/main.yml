@@ -14,9 +14,9 @@ jobs:
     steps:
       - name: Checkout
         env:
-          PAT: ${{ secrets.github_token }}
+          PAT: ${{ secrets.PAT }}
         run: |
           pwd
-          git clone https://$github_token@github.com/abitrian/test-component-lit.git
+          git clone https://$PAT@github.com/abitrian/test-component-lit.git
       - name: Set up enviroment
         uses: ./ # Uses an action in the root directory
