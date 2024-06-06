@@ -30,6 +30,8 @@ jobs:
           configure-gradle: 'true'
           configure-bower: 'true'
           repository-npm: 'gl-bbva-npm-virtual'
+          artifactory-user: ${{ secrets.ARTUSERNAME }}
+          artifactory-password: ${{ secrets.ARTPASSWORD }}
       - name: Install dependencies
         working-directory: ./working-directory
         run: npm config set package-lock false && npm install --unsafe-perm

@@ -19,12 +19,10 @@ inputs:
     default: 'gl-bbva-npm-virtual'
   artifactory-user:
     description: 'Artifactory User'
-    required: false
-    default: ${{ secrets.ARTUSERNAME }}
+    required: true
   artifactory-password:
     description: 'Artifactory User'
-    required: false
-    default: ${{ secrets.ARTPASSWORD }}
+    required: true
 runs:
   using: 'node16'
   main: 'dist/index.js'
