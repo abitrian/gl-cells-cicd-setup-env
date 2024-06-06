@@ -14,8 +14,15 @@ try {
     // `configure-npm` 'Flag to configure npm'
     const configureNpm = core.getInput('configure-npm');
     const repositoryNpm = core.getInput('repository-npm');
+    const repositoryBower = core.getInput('repository-bower');
+    const repositoryGradle = core.getInput('repository-gradle');
     const artifactoryUser = core.getInput('artifactory-user');
     const artifactoryPass = core.getInput('artifactory-password');
+
+    logger.info(`configureNpm :: ${configureNpm}`);
+    logger.info(`repositoryNpm :: ${repositoryNpm}`);
+    logger.info(`repositoryBower :: ${repositoryBower}`);
+    logger.info(`repositoryGradle :: ${repositoryGradle}`);
 
     if (configureNpm) {
         logger.info('Set up Artifactory registry');
