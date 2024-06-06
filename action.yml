@@ -17,6 +17,14 @@ inputs:
     description: 'Repository to use for npm'
     required: false
     default: 'gl-bbva-npm-virtual'
+  repository-bower:
+    description: 'Repository to use for npm'
+    required: false
+    default: 'gl-bbva-npm-virtual'
+  repository-gradle:
+    description: 'Repository to use for npm'
+    required: false
+    default: 'gl-bbva-npm-virtual'
   artifactory-user:
     description: 'Artifactory User'
     required: true
