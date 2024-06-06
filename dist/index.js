@@ -54191,7 +54191,7 @@ try {
     if (configureNpm) {
         logger.info('Set up Artifactory registry');
         exec.exec(`npm config set registry https://artifactory.globaldevtools.bbva.com:443/artifactory/api/npm/${repositoryNpm};`);
-        exec.exec("cat ~/.npmrc");
+        //exec.exec("cat ~/.npmrc");
 
         logger.info('Generate token for Artifactory');
         /*shell.exec(`TOKEN=$(curl -s -u${{artifactoryUser}}:${{artifactoryPass}} https://artifactory.globaldevtools.bbva.com:443/artifactory/api/npm/auth --insecure | grep _auth)`);
@@ -54214,7 +54214,7 @@ try {
 
         logger.info('Store token for Artifactory');
         exec.exec(`echo //artifactory.globaldevtools.bbva.com/artifactory/api/npm/:${TOKEN} >> ~/.npmrc`);
-        shell.exec("cat ~/.npmrc");
+        //shell.exec("cat ~/.npmrc");
     }
 
 } catch (error) {
