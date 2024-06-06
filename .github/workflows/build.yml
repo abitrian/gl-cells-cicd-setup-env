@@ -4,6 +4,7 @@ on:
     branches: [ main ]
 jobs:
   container-test-job:
+    environment: Testing
     runs-on: ubuntu-latest
     container:
       image: artifactory.globaldevtools.bbva.com:443/gl-cells-docker-local/cells/arch/cells_devops/cicd-cells-k8s:cells-4.2.0
