@@ -8,8 +8,7 @@ const logger = winston.createLogger({
     level: 'info',
     format: winston.format.json(),
     transports: [
-        new winston.transports.Console(),
-        new winston.transports.File({ filename: 'logfile.log' })
+        new winston.transports.Console()
     ]
 });
 
@@ -30,11 +29,11 @@ try {
     logger.info(`repositoryGradle :: ${repositoryGradle}`);
 
     if (configureNpm) {
-        logger.info('Set up Artifactory registry');
+        logger.info('Set up Artifactory registry :: ');
         shell.exec(`npm config set registry https://artifactory.globaldevtools.bbva.com:443/artifactory/api/npm/${repositoryNpm};`);
         shell.exec("cat ~/.npmrc");
 
-        logger.info('Generate token for Artifactory');
+        logger.info('Generate token for Artifactory :: ');
         /*shell.exec(`TOKEN=$(curl -s -u${{artifactoryUser}}:${{artifactoryPass}} https://artifactory.globaldevtools.bbva.com:443/artifactory/api/npm/auth --insecure | grep _auth)`);
         shell.exec("cat ~/.npmrc");*/
         exec(`curl -s -u${{artifactoryUser}}:${{artifactoryPass}} https://artifactory.globaldevtools.bbva.com:443/artifactory/api/npm/auth --insecure | grep _auth`, (error, stdout, stderr) => {
